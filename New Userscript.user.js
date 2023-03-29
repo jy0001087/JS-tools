@@ -14,12 +14,13 @@
     'use strict';
 
     // Your code here...
-    console.log('日日生活日日活');
     $(".jammer").remove();
     $("span[style='display:none']").remove();
 
     var messages = $(".message");
-    console.log(messages);
+    var a_nextpage = $("a:contains('下一页')");
+    var a_previouspage = $("a:contains('上一页')");
+    console.log(a_nextpage);
     document.body.innerHTML="";
 
     var wholeNoveldiv=document.createElement('div');
@@ -34,5 +35,11 @@
         wholeNoveldiv.appendChild(paragraph);
         console.log(messages[i].innerText);
     }
+    wholeNoveldiv.append(a_previouspage[0]);
+    wholeNoveldiv.append(a_nextpage[0]);
     document.body.appendChild(wholeNoveldiv);
+
+    document.getElementById('WholeNovel').style.font="normal 20px '微软雅黑'";
+    document.getElementById('WholeNovel').style.letterSpacing ='2px';
+    document.getElementById('WholeNovel').style.lineHeight = '30px';
 })();
